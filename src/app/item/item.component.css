@@ -7,6 +7,7 @@ img {
 .jumbotron {
   padding: 20px;
   border: 2px solid transparent;
+  transition: 0.3s;
 }
 
 .jumbotron:hover {
