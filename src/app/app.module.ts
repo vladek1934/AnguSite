@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { AboutComponent } from './about/about.component';
 import { ItemFullInfoComponent } from './item-full-info/item-full-info.component';
 import { ListItemComponent } from './list-item/list-item.component';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ListItemComponent } from './list-item/list-item.component';
     ListItemComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

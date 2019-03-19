@@ -41,7 +41,7 @@
         </div>
       </li>
 
-      <li class="nav-item"><a class="nav-item nav-link" href="">О нас</a></li>
+      <li class="nav-item"><a class="nav-item nav-link" href="/about">О нас</a></li>
       <li class="nav-item ml-2">
         <form class="form-inline" action="">
           <input class="form-control mr-sm-2" type="text" placeholder="Поиск товара">
@@ -51,15 +51,15 @@
     </ul>
     <!-- Navbar Right Side -->
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="">Вход</a>
-      <a class="nav-item nav-link" href="">Регистрация</a>
+      <a class="nav-item nav-link" href="/login">Вход</a>
+      <a class="nav-item nav-link" href="/register">Регистрация</a>
     </div>
   </div>
 </nav>
 
 
 <main role="main" class="container">
- <app-list-item></app-list-item>
+  <router-outlet></router-outlet>
 </main>
 
 <div class="jumbotron text-center" style="margin-bottom:0; margin-top: 10rem">
