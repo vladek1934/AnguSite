@@ -6,4 +6,12 @@ img {
 
 .jumbotron {
   padding: 20px;
+  border: 2px solid transparent;
+}
+
+.jumbotron:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+  cursor: pointer;
+  border: 2px solid lightslategrey;
 }
