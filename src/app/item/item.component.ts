@@ -8,6 +8,7 @@ import {Component, OnInit} from '@angular/core';
 export class ItemComponent implements OnInit {
   name = 'Backpack';
   description = 'Nice thing for containing something';
+  price = 7500;
 
   constructor() {
   }

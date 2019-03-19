@@ -10,7 +10,10 @@
   margin-bottom: 0;
 }
 
-.main_hold {min-height: 70vh}
+.main_hold {
+  min-height: 70vh
+}
+
 /* Add a gray background color and some padding to the footer */
 footer {
   background-color: #e9ecef;
@@ -31,7 +34,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #444444;
+  color: ghostwhite;
 }
 
 .bg-nav {
@@ -57,6 +60,30 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2.5rem;
 }
 
-.styled_link{
-
+.styled_link {
+  color: lightskyblue;
 }
+
+.header-top {
+  background-color: #cccccc;
+  color: #444444;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-image: url("../assets/default-images/background_header.jpg");
+}
+
+.header-top-inside {
+  background-color: rgba(0, 0, 0, .4);
+  width:max-content;
+  padding: 30px 200px;
+}
+
+footer {
+  padding: 20px 10px;
+  color: ghostwhite;
+  background-color: #001f3f;
+}
+
+.top-p {color:ghostwhite}
