@@ -12,6 +12,9 @@ import { ListItemComponent } from './list-item/list-item.component';
 import {AppRoutingModule} from './app-routing.module';
 import { CommentSectionComponent } from './comment-section/comment-section.component';
 import { CommentComponent } from './comment/comment.component';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {ProviderService} from './shared/services/provider.service';
 
 @NgModule({
   declarations: [
@@ -27,10 +30,12 @@ import { CommentComponent } from './comment/comment.component';
     CommentComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [ProviderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
