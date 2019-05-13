@@ -10,6 +10,8 @@ import { AboutComponent } from './about/about.component';
 import { ItemFullInfoComponent } from './item-full-info/item-full-info.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import {AppRoutingModule} from './app-routing.module';
+import { CommentSectionComponent } from './comment-section/comment-section.component';
+import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import {AppRoutingModule} from './app-routing.module';
     RegisterComponent,
     AboutComponent,
     ItemFullInfoComponent,
-    ListItemComponent
+    ListItemComponent,
+    CommentSectionComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
