@@ -1,35 +1,11 @@
-<div class="row">
-  <div class="col-md">
-    <app-item></app-item>
-  </div>
-  <div class="col-md">
-    <app-item></app-item>
-  </div>
-  <div class="col-md">
-    <app-item></app-item>
+<div class="app flex-row align-items-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let product of products;">
+        <app-item [routerLink]="['/products', product.id]" [product]="product"></app-item>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md">
-    <app-item></app-item>
-  </div>
-  <div class="col-md">
-    <app-item></app-item>
-  </div>
-  <div class="col-md">
-    <app-item></app-item>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-md">
-    <app-item></app-item>
-  </div>
-  <div class="col-md">
-    <app-item></app-item>
-  </div>
-  <div class="col-md">
-    <app-item></app-item>
-  </div>
-</div>

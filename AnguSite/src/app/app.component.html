@@ -7,14 +7,14 @@
 
 
 <nav class="navbar navbar-expand-md navbar-dark bg-nav sticky-top">
-  <a class="navbar-brand mr-4" href="">RedHotStore</a>
+  <a class="navbar-brand mr-4" routerLink="/products">RedHotStore</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
           aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarToggle">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item"><a class="nav-item nav-link" href="">Домой</a></li>
+      <li class="nav-item"><a class="nav-item nav-link" routerLink="/products">Домой</a></li>
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -40,7 +40,7 @@
         </div>
       </li>
 
-      <li class="nav-item"><a class="nav-item nav-link" href="/about">О нас</a></li>
+      <li class="nav-item"><a class="nav-item nav-link" routerLink="/about">О нас</a></li>
       <li class="nav-item ml-2">
         <form class="form-inline" action="">
           <input class="form-control mr-sm-2" type="text" placeholder="Поиск товара">
@@ -50,8 +50,8 @@
     </ul>
     <!-- Navbar Right Side -->
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="/login">Вход</a>
-      <a class="nav-item nav-link" href="/register">Регистрация</a>
+      <a class="nav-item nav-link" routerLink="/login">Вход</a>
+      <a class="nav-item nav-link" routerLink="/register">Регистрация</a>
     </div>
   </div>
 </nav>
@@ -77,7 +77,7 @@
         <h5 class="text-uppercase">Links</h5>
         <ul class="list-unstyled">
           <li>
-            <a href="/about" class="styled_link">About us</a>
+            <a routerLink="/about" class="styled_link">About us</a>
           </li>
         </ul>
       </div>

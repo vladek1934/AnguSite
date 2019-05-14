@@ -10,6 +10,11 @@ import { AboutComponent } from './about/about.component';
 import { ItemFullInfoComponent } from './item-full-info/item-full-info.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import {AppRoutingModule} from './app-routing.module';
+import { CommentSectionComponent } from './comment-section/comment-section.component';
+import { CommentComponent } from './comment/comment.component';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {ProviderService} from './shared/services/provider.service';
 
 @NgModule({
   declarations: [
@@ -20,13 +25,17 @@ import {AppRoutingModule} from './app-routing.module';
     RegisterComponent,
     AboutComponent,
     ItemFullInfoComponent,
-    ListItemComponent
+    ListItemComponent,
+    CommentSectionComponent,
+    CommentComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [ProviderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
