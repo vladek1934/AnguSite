@@ -1,11 +1,33 @@
 <div class="container">
   <div class="jumbotron">
-    <div cass="row">
-      <h1>{{ product.name }}</h1>
-      <img src="../../assets/default-images/shoppingbag-.jpg"/>
-      <h3>Category: {{ product.category }}</h3>
-      <h3>Price: {{ product.price }}₸</h3>
-      <p>{{ product.description}}</p>
+    <div class="row">
+      <div class="col-md-6" id="image" (mouseenter)="mouseEnter('image', 'zoom')" (mouseleave)="mouseLeave('zoom')"
+            (mousemove)="getMousePos($event, 'image', 'zoom-img')">
+        <img src="../../assets/default-images/shoppingbag-.jpg"/>
+      </div>
+      <div class="zoom" id="zoom">
+        <img id="zoom-img" class="zoom-img" src="../../assets/default-images/shoppingbag-.jpg"/>
+      </div>
+
+      <div class="col-md-5">
+        <div class="row">
+          <h1>{{ product.name }}</h1>
+        </div>
+
+        <div class="row">
+          <h6>Category: {{ product.category }}</h6>
+        </div>
+
+        <div class="row" style="margin-bottom: 20px">
+          <h3>Price: {{ product.price }}₸</h3>
+          <button type="submit" class="btn btn-success">Buy</button>
+        </div>
+
+        <div class="row">
+          <p>{{ product.description}}</p>
+        </div>
+
+      </div>
     </div>
   </div>
 </div>
