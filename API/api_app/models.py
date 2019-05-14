@@ -31,6 +31,8 @@ class Category(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=150)
     price = models.IntegerField()
+    file = models.FileField(blank=False, null=False)
+    description = models.CharField(max_length=400)
     count = models.IntegerField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
 
@@ -38,4 +40,5 @@ class Product(models.Model):
 class Comment(models.Model):
     text = models.CharField(max_length=350)
     rating = models.IntegerField()
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE, default=None, required=True)
+    product = models.ForeignKey(Product, default=None)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
