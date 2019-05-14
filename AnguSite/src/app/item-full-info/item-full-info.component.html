@@ -1,12 +1,13 @@
 <div class="container">
   <div class="jumbotron">
     <div class="row">
-      <div class="col-md-6" id="image" (mouseenter)="mouseEnter('image', 'zoom')" (mouseleave)="mouseLeave('zoom')"
-            (mousemove)="getMousePos($event, 'image', 'zoom-img')">
+      <div class="col-md-6" id="image" (mouseenter)="mouseEnter('image', 'zoom', 'area')" (mouseleave)="mouseLeave('zoom', 'area')"
+            (mousemove)="getMousePos($event, 'image', 'zoom-img', 'area')">
         <img src="../../assets/default-images/shoppingbag-.jpg"/>
       </div>
+      <div class="area" id="area"></div>
       <div class="zoom" id="zoom">
-        <img id="zoom-img" class="zoom-img" src="../../assets/default-images/shoppingbag-.jpg"/>
+        <img id="zoom-img" src="../../assets/default-images/shoppingbag-.jpg"/>
       </div>
 
       <div class="col-md-5">

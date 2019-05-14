@@ -14,8 +14,15 @@ button {
   z-index: 2;
   transform-style: preserve-3d;
   overflow: hidden;
+  border-radius: 10px;
 }
 
-.zoom-img {
-  transform: scale(4);
+.area {
+  position: absolute;
+  display: none;
+  z-index: 2;
+  border-radius: 10px;
+  background: #001f3f;
+  opacity: 0.2;
+  pointer-events: none;
 }
