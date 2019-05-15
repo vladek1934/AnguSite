@@ -22,7 +22,13 @@ class CategorySerializer(serializers.Serializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'username', 'email',)
+        fields = ('id', 'username', 'email')
+
+
+class UserSerializer2(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', 'username', 'email', 'password')
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -40,14 +46,14 @@ class OrderSerializer(serializers.ModelSerializer):
     date = serializers.DateTimeField()
     name = serializers.CharField()
     created_by = UserSerializer(read_only=True)
-    products = ProductSerializer(many=True)
+    product = ProductSerializer()
 
     # products = serializers.StringRelatedField(many=True)
     # products = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
 
     class Meta:
         model = Order
-        fields = ('id', 'name', 'created_by', 'date')
+        fields = ('id', 'name', 'created_by', 'date', 'product')
 
 
 class CommentSerializer(serializers.Serializer):

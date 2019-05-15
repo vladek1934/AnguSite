@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import {IAuthRespose, IProduct} from '../models/models';
+import {EventEmitter, Injectable} from '@angular/core';
+import {IAuthRespose, IOrder, IProduct} from '../models/models';
 import {HttpClient} from '@angular/common/http';
 import {MainService} from './main.service';
 
@@ -7,6 +7,8 @@ import {MainService} from './main.service';
   providedIn: 'root'
 })
 export class ProviderService extends MainService {
+
+  public sendMessage = new EventEmitter<boolean>();
 
   constructor(http: HttpClient) {
     super(http);
@@ -24,10 +26,17 @@ export class ProviderService extends MainService {
     return this.get('http://localhost:8000/categories/' + categoryId + '/', {});
   }
 
+  get_orders(): Promise<IOrder[]> {
+    return this.get('http://localhost:8000/orders/', {});
+  }
+
   auth(username: any, password: any): Promise<IAuthRespose> {
-    return this.post('http://localhost:8000/login', {
+    return this.post('http://localhost:8000/login/', {
       username: username,
       password: password
     });
+  }
+  logout(): Promise<any> {
+    return this.post('http://localhost:8000/logout/', {});
   }
 }

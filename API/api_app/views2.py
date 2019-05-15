@@ -4,7 +4,7 @@ from django.http import HttpResponse
 
 def index(request):
     context = {
-        'name': 'Student 1',
+        'name': 'User 1',
         'nums': [i for i in range(5)],
         'is_logged_in': False,
         'product': {

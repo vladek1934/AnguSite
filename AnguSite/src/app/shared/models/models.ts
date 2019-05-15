@@ -14,3 +14,12 @@ export interface ICategory {
 export interface IAuthRespose {
   token: string;
 }
+
+export interface IOrder {
+  id: number;
+  name: string;
+  user: string;
+  date: string;
+  product: string;
+}
+

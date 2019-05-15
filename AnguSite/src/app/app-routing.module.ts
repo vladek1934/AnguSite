@@ -8,6 +8,7 @@ import {RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
 import {ProfileComponent} from './profile/profile.component';
 import {ItemFullInfoComponent} from './item-full-info/item-full-info.component';
+import {OrdersComponent} from './orders/orders.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/products', pathMatch: 'full'},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'products', component: ListItemComponent},
   {path: 'products/:id', component: ItemFullInfoComponent},
   {path: ':categoryName/products', component: ListItemComponent},
+  {path: 'orders', component: OrdersComponent},
 ];
 
 @NgModule({

@@ -38,6 +38,7 @@ class Order(models.Model):
     date = models.DateTimeField()
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     objects = OrderManager()
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, default=None)
 
     class Meta:
         verbose_name = 'Order'

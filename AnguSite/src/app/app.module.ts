@@ -16,6 +16,8 @@ import {FormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ProviderService} from './shared/services/provider.service';
 import {AuthInterceptor} from './AuthInterceptor';
+import { HeaderComponent } from './header/header.component';
+import { OrdersComponent } from './orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import {AuthInterceptor} from './AuthInterceptor';
     ItemFullInfoComponent,
     ListItemComponent,
     CommentSectionComponent,
-    CommentComponent
+    CommentComponent,
+    HeaderComponent,
+    OrdersComponent
   ],
   imports: [
     FormsModule,

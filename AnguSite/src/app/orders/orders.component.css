@@ -1,0 +1,12 @@
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.jumbotron {
+  padding: 20px;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
