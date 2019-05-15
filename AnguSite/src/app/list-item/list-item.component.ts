@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Product} from '../shared/models/models';
+import {IProduct} from '../shared/models/models';
 import {ProviderService} from '../shared/services/provider.service';
 
 @Component({
@@ -9,7 +9,7 @@ import {ProviderService} from '../shared/services/provider.service';
 })
 export class ListItemComponent implements OnInit {
 
-  public products: Product[] = [{id: 0, name: '0', description: '0', price: 100, category: '0'}, // just until back is done
+  public products: IProduct[] = [{id: 0, name: '0', description: '0', price: 100, category: '0'}, // just until back is done
                                 {id: 1, name: '1', description: '1', price: 100, category: '1'},
                                 {id: 2, name: '2', description: '2', price: 100, category: '0'},
                                 {id: 3, name: '3', description: '3', price: 100, category: '0'},
