@@ -11,17 +11,12 @@ import {decreaseElementDepthCount} from '@angular/core/src/render3/state';
   styleUrls: ['./item-full-info.component.css']
 })
 export class ItemFullInfoComponent implements OnInit {
-  public products: IProduct[] = [{id: 0, name: '0', description: '0', price: 100, category: '0'}, // just until back is done
-                                {id: 1, name: '1', description: '1', price: 100, category: '1'},
-                                {id: 2, name: '2', description: '2', price: 100, category: '0'},
-                                {id: 3, name: '3', description: '3', price: 100, category: '0'},
-                                {id: 4, name: '4', description: '4', price: 100, category: '1'}];
-
-
   public product: IProduct;
+  private loaded = false;
 
   constructor(private route: ActivatedRoute, private provider: ProviderService) { }
 
+  // This is code for lupa
   mouseEnter(imageId, zoomId, areaId) {
     const image = document.getElementById(imageId);
     document.getElementById(zoomId).style.left = image.offsetLeft + image.offsetWidth + 'px';
@@ -65,18 +60,15 @@ export class ItemFullInfoComponent implements OnInit {
     document.getElementById(areaId).style.top = (y + image.offsetTop - image.offsetHeight / zoomLevel / 2) + 'px';
     document.getElementById(areaId).style.width = (image.offsetWidth / zoomLevel) + 'px';
     document.getElementById(areaId).style.height = (image.offsetHeight / zoomLevel) + 'px';
-
   }
+  // end of lupa
 
   ngOnInit() {
-    // this.provider.get_product_detail(this.product.id).then(res => {
-    //   this.products = res;
-    // });
-
     this.route.params.subscribe(params => {
-      if (this.products[params.id] !== undefined) {
-        this.product = this.products[params.id];  // just until back is done
-      }
+      this.provider.get_poduct_detail(params.id).then(res => {
+        this.product = res;
+        this.loaded = true;
+      });
     });
   }
 

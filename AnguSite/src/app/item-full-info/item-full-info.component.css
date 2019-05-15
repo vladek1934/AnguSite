@@ -2,6 +2,7 @@ img {
   display: block;
   width: 100%;
   height: 100%;
+  border-radius: 10px;
 }
 
 button {
@@ -12,7 +13,6 @@ button {
   position: absolute;
   display: none;
   z-index: 2;
-  transform-style: preserve-3d;
   overflow: hidden;
   border-radius: 10px;
 }
