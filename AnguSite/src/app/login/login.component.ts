@@ -15,15 +15,15 @@ export class LoginComponent implements OnInit {
 
   constructor(private provider: ProviderService) { }
 
-  auth() {
-    if (this.username !== '' && this.password !== '') {
-      this.provider.auth(this.username, this.password).then(res => {
-        localStorage.setItem('token', res.token);
-        this.logged = true;
-        this.change.emit(this.logged);
-      });
-    }
-  }
+  // auth() {
+  //   if (this.username !== '' && this.password !== '') {
+  //     this.provider.auth(this.username, this.password).then(res => {
+  //       localStorage.setItem('token', res.token);
+  //       this.logged = true;
+  //       this.change.emit(this.logged);
+  //     });
+  //   }
+  // }
 
   ngOnInit() {
   }
