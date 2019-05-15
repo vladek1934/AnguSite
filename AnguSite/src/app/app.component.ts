@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AnguSite';
+  logged = false;
+
+  loggedChange(event) {
+    this.logged = event;
+  }
 }
