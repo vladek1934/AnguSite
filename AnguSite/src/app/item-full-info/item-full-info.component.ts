@@ -34,7 +34,7 @@ export class ItemFullInfoComponent implements OnInit {
   }
 
   getMousePos(event, imageId, zoomImgId, areaId) {
-    const zoomLevel = 2;
+    const zoomLevel = 3;
 
     const image = document.getElementById(imageId);
     let x = event.x - image.offsetLeft + document.documentElement.scrollLeft;

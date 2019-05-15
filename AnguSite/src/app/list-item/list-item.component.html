@@ -1,5 +1,6 @@
 <div class="app flex-row align-items-center">
-  <h1>Our products:</h1>
+  <h1 *ngIf="!category">Products:</h1>
+  <h1 *ngIf="category">{{categoryName}}:</h1>
   <div class="container">
     <div class="row">
       <div class="col-md-4" *ngFor="let product of products;">

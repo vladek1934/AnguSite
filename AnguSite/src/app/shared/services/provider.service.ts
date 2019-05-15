@@ -20,6 +20,9 @@ export class ProviderService extends MainService {
     return this.get('http://localhost:8000/products/' + id + '/', {});
   }
 
+  get_category_products(categoryId): Promise<IProduct[]> {
+    return this.get('http://localhost:8000/categories/' + categoryId + '/', {});
+  }
 
   auth(username: any, password: any): Promise<IAuthRespose> {
     return this.post('http://localhost:8000/login', {

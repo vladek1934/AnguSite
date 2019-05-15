@@ -1,8 +1,8 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
-from api_app.models import Comment
-from api_app.serializers import CommentSerializer
+from api_app.models import Comment, Category
+from api_app.serializers import CommentSerializer, CategorySerializer, ProductSerializer
 
 
 @api_view(['GET', 'POST'])
@@ -38,3 +38,16 @@ def comment_detail(request, pk):
     elif request.method == 'DELETE':
         comment.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['GET'])
+def category_products(request, catName):
+    try:
+        category = Category.objects.get(name=catName)
+    except Category.DoesNotExist as e:
+        return Response({'error': str(e)}, status=status.HTTP_200_OK)
+
+    products = category.products.all()
+
+    if request.method == 'GET':
+        serializer = CategorySerializer(products, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
