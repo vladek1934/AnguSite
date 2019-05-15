@@ -39,6 +39,18 @@ export class ProviderService extends MainService {
     });
   }
 
+  update_order(order: IOrder): Promise<IOrder> {
+    return this.put(`http://localhost:8000/orders/${order.id}/`, {
+      name: order.name,
+      user: order.user,
+      date: order.date,
+      product: order.product
+    });
+  }
+
+  delete_order(id: number): Promise<any> {
+    return this.delete(`http://localhost:8000/orders/${id}/`, {});
+  }
 
 
   auth(username: any, password: any): Promise<IAuthRespose> {
