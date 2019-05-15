@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container" *ngIf="loaded">
   <div class="jumbotron">
     <div class="row">
-      <div class="col-md-6" id="image" (mouseenter)="mouseEnter('image', 'zoom', 'area')" (mouseleave)="mouseLeave('zoom', 'area')"
+      <div class="col-md-4" id="image" (mouseenter)="mouseEnter('image', 'zoom', 'area')" (mouseleave)="mouseLeave('zoom', 'area')"
             (mousemove)="getMousePos($event, 'image', 'zoom-img', 'area')">
         <img src="../../assets/default-images/shoppingbag-.jpg"/>
       </div>
@@ -10,13 +10,13 @@
         <img id="zoom-img" src="../../assets/default-images/shoppingbag-.jpg"/>
       </div>
 
-      <div class="col-md-5">
+      <div class="col-md-7">
         <div class="row">
           <h1>{{ product.name }}</h1>
         </div>
 
         <div class="row">
-          <h6>Category: {{ product.category }}</h6>
+          <h6>Category: {{ product.category.name }}</h6>
         </div>
 
         <div class="row" style="margin-bottom: 20px">
@@ -33,4 +33,4 @@
   </div>
 </div>
 
-<app-comment-section></app-comment-section>
+<app-comment-section *ngIf="loaded"></app-comment-section>

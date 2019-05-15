@@ -12,11 +12,12 @@ import {ItemFullInfoComponent} from './item-full-info/item-full-info.component';
 const routes: Routes = [
   {path: '', redirectTo: '/products', pathMatch: 'full'},
   {path: 'about', component: AboutComponent},
-  {path: 'products', component: ListItemComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'profile', component: ProfileComponent},
+  {path: 'products', component: ListItemComponent},
   {path: 'products/:id', component: ItemFullInfoComponent},
+  {path: ':categoryName/products', component: ListItemComponent},
 ];
 
 @NgModule({

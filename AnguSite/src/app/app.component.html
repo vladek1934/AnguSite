@@ -14,33 +14,31 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarToggle">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item"><a class="nav-item nav-link" routerLink="/products">Домой</a></li>
+      <li class="nav-item"><a class="nav-item nav-link" routerLink="/products">Home</a></li>
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-          Одежда
+          Categories
         </a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="">Свитеры</a>
-          <a class="dropdown-item" href="">Блузы и рубашки</a>
-          <a class="dropdown-item" href="">Платья</a>
-          <a class="dropdown-item" href="">Брюки</a>
-          <a class="dropdown-item" href="">Костюмы</a>
+          <a class="dropdown-item" routerLink="/products">All</a>
+          <a class="dropdown-item" routerLink="Clothes/products">Clothes</a>
+          <a class="dropdown-item" routerLink="Accessories/products">Accessories</a>
         </div>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-          Аксессуары
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="">Сумки</a>
-          <a class="dropdown-item" href="">Кошельки</a>
-          <a class="dropdown-item" href="">Шарфы</a>
-          <a class="dropdown-item" href="">Головные уборы</a>
-        </div>
-      </li>
+      <!--<li class="nav-item dropdown">-->
+        <!--<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">-->
+          <!--Аксессуары-->
+        <!--</a>-->
+        <!--<div class="dropdown-menu">-->
+          <!--<a class="dropdown-item" href="">Сумки</a>-->
+          <!--<a class="dropdown-item" href="">Кошельки</a>-->
+          <!--<a class="dropdown-item" href="">Шарфы</a>-->
+          <!--<a class="dropdown-item" href="">Головные уборы</a>-->
+        <!--</div>-->
+      <!--</li>-->
 
-      <li class="nav-item"><a class="nav-item nav-link" routerLink="/about">О нас</a></li>
+      <li class="nav-item"><a class="nav-item nav-link" routerLink="/about">About</a></li>
       <li class="nav-item ml-2">
         <form class="form-inline" action="">
           <input class="form-control mr-sm-2" type="text" placeholder="Поиск товара">
@@ -50,8 +48,8 @@
     </ul>
     <!-- Navbar Right Side -->
     <div class="navbar-nav">
-      <a class="nav-item nav-link" routerLink="/login">Вход</a>
-      <a class="nav-item nav-link" routerLink="/register">Регистрация</a>
+      <a class="nav-item nav-link" routerLink="/login">Sing In</a>
+      <a class="nav-item nav-link" routerLink="/register">Sing Up</a>
     </div>
   </div>
 </nav>

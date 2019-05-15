@@ -27,11 +27,12 @@ class UserSerializer(serializers.ModelSerializer):
 
 class ProductSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
-    category_id = serializers.IntegerField(write_only=True)
+    category = CategorySerializer()                         # alternative
+    #category_id = serializers.IntegerField(write_only=True)
 
     class Meta:
         model = Product
-        fields = ('id', 'name', 'price', 'count', 'category_id')
+        fields = ('id', 'name', 'description', 'price', 'count', 'category')    # there was 'category_id' before
 
 
 class OrderSerializer(serializers.ModelSerializer):

@@ -1,4 +1,5 @@
 from rest_framework import generics
+from rest_framework.parsers import FileUploadParser
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from api_app.models import Order, Product
 from api_app.serializers import OrderSerializer, ProductSerializer
@@ -23,6 +24,7 @@ class OrderDetail(generics.RetrieveUpdateDestroyAPIView):
 class ProductList(generics.ListCreateAPIView):
     serializer_class = ProductSerializer
     permission_classes = (AllowAny,)
+    parser_class = (FileUploadParser,)
 
     def get_queryset(self):
         return Product.objects.all()
@@ -32,5 +34,5 @@ class ProductList(generics.ListCreateAPIView):
 
 
 class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Order.objects.all()
+    queryset = Product.objects.all()
     serializer_class = ProductSerializer
