@@ -28,8 +28,20 @@ class UserSerializer(serializers.ModelSerializer):
 class UserSerializer2(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'password')
+        fields = ('id', 'username', 'password', 'email', )
+        write_only_fields = ('password',)
+        read_only_fields = ('id',)
 
+    def create(self, validated_data):
+        user = User.objects.create(
+            username=validated_data['username'],
+            email=validated_data['email'],
+        )
+
+        user.set_password(validated_data['password'])
+        user.save()
+
+        return user
 
 class ProductSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
@@ -47,6 +59,20 @@ class OrderSerializer(serializers.ModelSerializer):
     name = serializers.CharField()
     created_by = UserSerializer(read_only=True)
     product = ProductSerializer()
+
+    # products = serializers.StringRelatedField(many=True)
+    # products = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+
+    class Meta:
+        model = Order
+        fields = ('id', 'name', 'created_by', 'date', 'product')
+
+class OrderSerializer2(serializers.ModelSerializer):
+    id = serializers.IntegerField(read_only=True)
+    date = serializers.DateTimeField()
+    name = serializers.CharField()
+    created_by = UserSerializer(read_only=True)
+    product = ProductSerializer
 
     # products = serializers.StringRelatedField(many=True)
     # products = serializers.PrimaryKeyRelatedField(many=True, read_only=True)

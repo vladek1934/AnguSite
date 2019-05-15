@@ -21,7 +21,7 @@
 
         <div class="row" style="margin-bottom: 20px">
           <h3>Price: {{ product.price }}₸</h3>
-          <button type="submit" class="btn btn-success">Buy</button>
+          <button type="submit" class="btn btn-success" (click)="addOrder(product)">Buy</button>
         </div>
 
         <div class="row">

@@ -35,7 +35,7 @@ class Comment(models.Model):
 
 class Order(models.Model):
     name = models.CharField(max_length=200)
-    date = models.DateTimeField()
+    date = models.DateTimeField(auto_now=True)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     objects = OrderManager()
     product = models.ForeignKey(Product, on_delete=models.CASCADE, default=None)

@@ -63,6 +63,10 @@ export class ItemFullInfoComponent implements OnInit {
   }
   // end of lupa
 
+  addOrder(productOrder){
+    this.provider.create_order(productOrder).then(res => {});
+  }
+
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.provider.get_poduct_detail(params.id).then(res => {

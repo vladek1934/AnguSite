@@ -2,15 +2,19 @@ from rest_framework import generics
 from rest_framework.parsers import FileUploadParser
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from api_app.models import Order, Product, User
-from api_app.serializers import OrderSerializer, ProductSerializer, UserSerializer2
+from api_app.serializers import OrderSerializer, ProductSerializer, UserSerializer2, OrderSerializer2
 
 
-class OrderList(generics.ListCreateAPIView):
+class OrderList(generics.ListAPIView):
     serializer_class = OrderSerializer
     permission_classes = (IsAuthenticated,)
 
     def get_queryset(self):
         return Order.objects.for_user(self.request.user)
+
+class OrderCreate(generics.CreateAPIView):
+    serializer_class = OrderSerializer
+    permission_classes = (IsAuthenticated,)
 
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)
