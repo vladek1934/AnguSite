@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { ClassProvider, NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ItemComponent } from './item/item.component';
@@ -13,8 +13,9 @@ import {AppRoutingModule} from './app-routing.module';
 import { CommentSectionComponent } from './comment-section/comment-section.component';
 import { CommentComponent } from './comment/comment.component';
 import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ProviderService} from './shared/services/provider.service';
+import {AuthInterceptor} from './AuthInterceptor';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,13 @@ import {ProviderService} from './shared/services/provider.service';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [ProviderService],
+  providers: [
+    ProviderService,
+    <ClassProvider> {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

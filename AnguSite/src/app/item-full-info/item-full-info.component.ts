@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {Product} from '../shared/models/models';
+import {IProduct} from '../shared/models/models';
 import {ProviderService} from '../shared/services/provider.service';
 import {ɵDOMTestComponentRenderer} from '@angular/platform-browser-dynamic/testing';
 import {decreaseElementDepthCount} from '@angular/core/src/render3/state';
@@ -11,14 +11,14 @@ import {decreaseElementDepthCount} from '@angular/core/src/render3/state';
   styleUrls: ['./item-full-info.component.css']
 })
 export class ItemFullInfoComponent implements OnInit {
-  public products: Product[] = [{id: 0, name: '0', description: '0', price: 100, category: '0'}, // just until back is done
+  public products: IProduct[] = [{id: 0, name: '0', description: '0', price: 100, category: '0'}, // just until back is done
                                 {id: 1, name: '1', description: '1', price: 100, category: '1'},
                                 {id: 2, name: '2', description: '2', price: 100, category: '0'},
                                 {id: 3, name: '3', description: '3', price: 100, category: '0'},
                                 {id: 4, name: '4', description: '4', price: 100, category: '1'}];
 
 
-  public product: Product;
+  public product: IProduct;
 
   constructor(private route: ActivatedRoute, private provider: ProviderService) { }
 
